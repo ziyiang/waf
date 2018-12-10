@@ -8,7 +8,9 @@ if ngx.re.match(ngx.var.request_uri,"^/captcha-waf.html","jo") then
 end
 
 local function waf_main()
-    if black_ip_check() then
+    if test() then
+    elseif web_check() then
+    elseif black_ip_check() then
     elseif white_ip_check() then
     elseif white_url_check() then
     elseif user_agent_attack_check() then
@@ -17,6 +19,8 @@ local function waf_main()
     elseif url_attack_check() then
     elseif url_args_attack_check() then
     --elseif post_attack_check() then
+    --elseif test_mysql() then
+    --elseif test_redis() then
     else
         return
     end

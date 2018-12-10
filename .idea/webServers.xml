@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="171e2a06-b1cb-47bf-9fa0-8adb93881f97" name="jerryserver" url="http://39.105.47.187">
+        <fileTransfer host="39.105.47.187" port="22" rootFolder="/usr/local/openresty/nginx/conf/waf/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions controlEncoding="UTF-8" dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

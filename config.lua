@@ -5,7 +5,7 @@ config_waf_enable = "on"
 --log dir
 config_log_dir = "/data/wwwlogs"
 --rule setting
-config_rule_dir = "/usr/local/nginx/conf/waf/wafconf"
+config_rule_dir = "/usr/local/openresty/nginx/conf/waf/wafconf"
 --enable/disable white url
 config_white_url_check = "on"
 --enable/disable white ip
@@ -23,13 +23,19 @@ config_cookie_check = "on"
 --enable/disable cc filtering
 config_cc_check = "on"
 --cc rate the xxx of xxx seconds
-config_cc_rate = "60/60"
+config_cc_rate = "30/60"
 --enable/disable post filtering
 config_post_check = "on"
 --config waf output redirect/html
 config_waf_output = "html"
 --if config_waf_output ,setting url
 config_waf_redirect_url = "/captcha"
+
+-- 定义超过redis阀值次数
+config_redis_limit = 5
+
+
+
 config_waf_captcha_html=[[
 <html>
     <head>

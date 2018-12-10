@@ -94,3 +94,15 @@ function waf_output()
         ngx.exit(ngx.status)
     end
 end
+
+-- 修改了获取客户端真实ip的代码，支持代理 ,参考https://github.com/loveshell/ngx_lua_waf/issues/132
+function getClientIp()
+    local headers = ngx.req.get_headers()
+    local reip = headers["X-REAL-IP"] or headers["X_FORWARDED_FOR"] or ngx.var.remote_addr or "0.0.0.0"
+    return reip
+    --IP = ngx.var.remote_addr
+    -- if IP == nil then
+    -- IP = "unknown"
+    -- end
+    -- return IP
+end
